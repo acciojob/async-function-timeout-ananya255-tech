@@ -1,5 +1,11 @@
 //your JS code here. If required.
-let text=document.getElementById("text").value
+let button=document.getElementById('btn')
+button.addEventListener('click',handelpromise)
+
+
+async function handelpromise(){
+
+	let text=document.getElementById("text").value
 let dealy=document.getElementById("delay").value
 
 let promiseOne=new Promise((resolve,reject)=>{
@@ -7,8 +13,6 @@ let promiseOne=new Promise((resolve,reject)=>{
 		resolve(text)
 	},dealy)
 })
-
-async function handelpromise(){
 	try{
 		let data=await promiseOne
 		console.log(data)
@@ -18,5 +22,5 @@ async function handelpromise(){
 	}
 }
 
-handelpromise()
+
 	
